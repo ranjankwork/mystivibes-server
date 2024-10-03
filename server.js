@@ -101,17 +101,7 @@ app.get("/posts", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: "Error fetching posts", error });
   }
-});
-// app.get("/posts", async (req, res) => {
-//   try {
-//     const posts = await Post.find()
-//       .populate("user_id", "username")
-//       .sort({ created_at: -1 });
-//     res.status(200).json(posts);
-//   } catch (error) {
-//     res.status(500).json({ message: "Error fetching posts", error });
-//   }
-// });
+}); 
 
 // 4. Upload a post with an image and additional fields
 app.post("/upload-post", upload.single("image"), async (req, res) => {
