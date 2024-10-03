@@ -59,7 +59,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // API routes
-
+app.get("/", async (req, res) => {
+  res.send("Hello")
+})
 // 1. User Signup
 app.post("/signup", async (req, res) => {
   const { username, phone_number, password } = req.body;
